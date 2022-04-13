@@ -1,0 +1,5 @@
+{
+  "john-ellis.rubocop-nova.autocorrect" : "--auto-correct",
+  "john-ellis.rubocop-nova.base-command" : "bundle exec standardrb",
+  "john-ellis.rubocop-nova.disable-uncorrectable" : false
+}
