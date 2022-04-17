@@ -1,0 +1,18 @@
+<div data-id="<%= card.id %>" id="<%= dom_id(card) %>" class="card-body">
+  <div
+    class="border border-black rounded-lg my-4 pl-2 card"
+    data-card-title="<%= card.name.parameterize %>">
+    <div class="flex flex-vertical items-center font-bold">
+      <%= render("cards/show/handle") %>
+      <%= render("cards/show/slug", card:) %>
+      <%= render("cards/show/initials", card:) %>
+      <%= render("cards/show/size", card:) %>
+      <%= render("cards/show/name", card:) %>
+      <%= render("cards/show/actions", card:) %>
+    </div>
+    <div class="flex mb-4">
+      <%= render("cards/show/description", card:) %>
+      <%= render("cards/show/more_actions", card:) %>
+    </div>
+  </div>
+</div>

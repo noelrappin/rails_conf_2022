@@ -1,0 +1,16 @@
+<%= form_with(model: card) do |f| %>
+  <%= f.hidden_field(:person_id) %>
+  <div class="droplist absolute w-48 -my-2 -mx-16
+            bg-gray-400 z-10 shadow-xl">
+    <% Person.edit_people_list.each do |person| %>
+      <div
+        class="py-2 px-4 hover:bg-gray-100
+                <%= "bg-yellow-200" if card.person == person %>"
+        id="<%= card.slugged_id("person_#{person.initials.downcase}") %>"
+        data-person-id="<%= person.id %>">
+        <%= person.initials %><%= ":" if person.initials.present? %>
+        <%= person.name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
