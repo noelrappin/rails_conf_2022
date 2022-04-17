@@ -1,0 +1,15 @@
+<%= form_with(model: card) do |f| %>
+  <%= f.hidden_field(:size) %>
+  <div class="droplist absolute w-48 -my-2 -mx-16
+            bg-gray-400 z-10 shadow-xl">
+    <% Card::SIZES.each do |size| %>
+      <div
+        class="py-2 px-4 hover:bg-gray-100
+                <%= "bg-yellow-200" if card.size == size %>"
+        id="<%= card.slugged_id("size_#{size}") %>"
+        data-size-id="<%= size %>">
+        <%= size %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

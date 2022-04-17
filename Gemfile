@@ -2,21 +2,27 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
-gem "propshaft"
-gem "sqlite3", "~> 1.4"
-gem "puma", "~> 5.0"
+
+gem "acts_as_list"
+gem "awesome_print"
+gem "chartkick"
+gem "date_by_example"
+gem "friendly_id"
 gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
-gem "tailwindcss-rails"
+gem "inline_svg", github: "/jamesmartin/inline_svg"
 gem "jbuilder"
-gem "standard"
-
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+gem "kredis"
+gem "propshaft"
+gem "puma", "~> 5.0"
+gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+gem "redis", "~> 4.0"
+gem "sqlite3", "~> 1.4"
+gem "simple_form", github: "loqimean/simple_form"
+# gem "simple_form-tailwind"
+gem "stimulus-rails"
+gem "table_print"
+gem "tailwindcss-rails"
+gem "turbo-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -28,9 +34,21 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "capybara", github: "teamcapybara/capybara"
+  gem "capybara-screenshot"
+  gem "dotenv-rails"
+  gem "faker"
+  gem "pry-rails"
+  gem "pry-rescue"
+  gem "rspec-collection_matchers"
+  gem "rspec-rails"
+  gem "selenium-webdriver"
+  gem "standard"
 end
 
 group :development do
+  gem "annotate"
+  gem "erb_lint", require: false
   gem "web-console"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

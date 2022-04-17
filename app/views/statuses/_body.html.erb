@@ -1,0 +1,8 @@
+<div id="cards_with_status_<%= status %>">
+  <% project.cards_for(status).each do |card| %>
+    <%= render(card) %>
+  <% end %>
+</div>
+<% if status.in?(%w[started unstarted]) %>
+  <%= render("statuses/new_card", status:, project:) %>
+<% end %>

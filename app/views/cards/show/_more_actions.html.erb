@@ -1,0 +1,18 @@
+<div class="mx-10">
+  <div class="flex flex-col">
+    <div class="flex flex-row justify-between space-x-4">
+      <% if previous_label(card.status) %>
+        <div class="<%= new_button_class %>"><%= previous_label(card.status) %></div>
+      <% end %>
+      <div>
+        <%= button_to(card, method: :delete) do %>
+          <%= image_tag(
+                "trash.svg",
+                size: "25x25",
+                class: "min-h-[25px] min-w-[25px]"
+              ) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

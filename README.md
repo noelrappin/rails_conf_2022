@@ -46,15 +46,15 @@ To use this app, you should move between branches to browse code (you may want t
 
 I've tried to put a lot of base info in the `plain_old_ruby` branch to minimize change between branches, but there still may be things that require a restart of the server or the docker container as you change branches.
 
-The starting branches are:
+The `main` branch is pretty much just what you get from running `rails new . -a propshaft j importmap -d sqlite3 -c tailwind --skip-test`+ data models and view files and support gems. Running this branch gives you the basic, no JavaScript version of the app.
 
-* `main`: Pretty much just what you get from running `rails new . -a propshaft j importmap -d sqlite3 -c tailwind --skip-test`.
+If you hit `http://localhost:3000`, `http://localhost:3000/projects`, or `http://localhost:3000/projects/1`, they should all look something like this:
 
-* `plain_old_rails`: Main + data models and view files and support gems. Running this branch gives you the basic, no JavaScript version of the app.
+![](sample.png)
+
+Please note that the data is all generated via Faker and a rake task in `lib/tasks/sample_data.rake`, run `rake tracker:clear_and_create` to completely delete the data and generate a new project's worth of data
 
 The follow up branches, more or less in the order of how complicated the code is:
-
-
 
 | Branch | Uses | Description
 | --- | --- | -- |

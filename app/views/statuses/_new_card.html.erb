@@ -1,0 +1,23 @@
+<div class="border border-black rounded-lg my-4 pl-2">
+  <div class="flex">
+    <div class="flex-grow ml-56 mr-36 mb-2">
+      <%= simple_form_for(Card.new) do |f| %>
+        <%= hidden_field_tag("card[project_id]", project.id) %>
+        <%= hidden_field_tag("card[status]", status.to_s) %>
+        <div class="w-full mr-10 mt-2 -ml-2">
+          <%= f.input(
+                :name,
+                label: false,
+                placeholder: "New Card",
+                required: true,
+                autofocus: false,
+                input_html: {
+                  id: "card_name_#{status}",
+                  class: "sm:w-full font-bold text-lg sm:text-black"
+                }
+              ) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
