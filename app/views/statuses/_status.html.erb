@@ -1,4 +1,10 @@
-<div id="section_with_status_<%= status %>">
-  <%= render("statuses/header", status:) %>
-  <%= render("statuses/body", status:, project:) %>
+<% visible = status.in?(%w[started unstarted]) ? "true" : "false" %>
+<div
+  id="section_with_status_<%= status %>"
+  data-controller="visibility"
+  data-visibility-visible-value="<%= visible %>">
+  <%= render("statuses/header", status:, visible:) %>
+  <div data-visibility-target="element">
+    <%= render("statuses/body", status:, project:) %>
+  </div>
 </div>

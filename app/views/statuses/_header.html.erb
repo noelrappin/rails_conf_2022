@@ -2,6 +2,11 @@
   <div><%= status.to_s.capitalize %></div>
   <div
     id="button_with_status_<%= status %>"
-    class="ml-8 chevron-down w-8 h-8">
+    class="ml-8 w-8 h-8 transition"
+    data-controller="rotating"
+    data-rotating-target="button"
+    data-rotating-is-initially-down-value="<%= visible %>"
+    data-rotating-is-currently-down-value="<%= visible %>"
+    data-action="click->visibility#toggle click->rotating#toggle">
   </div>
 </div>
