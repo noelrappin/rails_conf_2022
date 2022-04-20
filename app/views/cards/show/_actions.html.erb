@@ -13,6 +13,8 @@
     <%= image_tag("eye.svg", size: "25x25") %>
   </div>
   <div class="mx-4 show_more">
-    <%= image_tag("pencil.svg", size: "25x25") %>
+    <%= link_to(edit_card_path(card)) do %>
+      <%= image_tag("pencil.svg", size: "25x25") %>
+    <% end %>
   </div>
 </div>
