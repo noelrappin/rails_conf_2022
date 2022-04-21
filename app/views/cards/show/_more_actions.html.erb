@@ -2,7 +2,12 @@
   <div class="flex flex-col">
     <div class="flex flex-row justify-between space-x-4">
       <% if previous_label(card.status) %>
-        <div class="<%= new_button_class %>"><%= previous_label(card.status) %></div>
+        <%= button_to(
+              previous_label(card.status),
+              card_advance_path(id: card.id),
+              method: :delete,
+              class: "#{new_button_class} retreat"
+            ) %>
       <% end %>
       <div>
         <%= image_tag(

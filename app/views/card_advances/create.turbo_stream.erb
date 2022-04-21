@@ -1,0 +1,4 @@
+<%= turbo_stream.remove(dom_id(@card)) %>
+<%= turbo_stream.append("cards_with_status_#{@card.status}") do %>
+  <%= render(@card) %>
+<% end %>

@@ -3,7 +3,7 @@
     <div>
       <%= button_to(
             next_label(card.status),
-            card_path(id: card.id),
+            card_advances_path(id: card.id),
             method: :post,
             class: "#{new_button_class} advance"
           ) %>
