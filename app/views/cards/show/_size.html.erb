@@ -1,6 +1,7 @@
 <div
-  id="<%= card.slugged_id(:size) %>"
-  class="<%= dropdown_ring %>">
+  class="<%= dropdown_ring %>"
+  data-pulldown-target="display"
+  data-action="click->pulldown#open">
   <span
     id="<%= card.slugged_id(:size_text) %>"
     class="<%= font_size_from(card.size) %>">

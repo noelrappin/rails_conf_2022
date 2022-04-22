@@ -1,5 +1,5 @@
-<%= form_with(model: card) do |f| %>
-  <%= f.hidden_field(:person_id) %>
+<%= form_with(model: card, data: {controller: "form", "form-target": "form"}) do |f| %>
+  <%= f.hidden_field(:person_id, "data-pulldown-target": "field") %>
   <div class="droplist absolute w-48 -my-2 -mx-16
             bg-gray-400 z-10 shadow-xl">
     <% Person.edit_people_list.each do |person| %>
@@ -7,7 +7,9 @@
         class="py-2 px-4 hover:bg-gray-100
                 <%= "bg-yellow-200" if card.person == person %>"
         id="<%= card.slugged_id("person_#{person.initials.downcase}") %>"
-        data-person-id="<%= person.id %>">
+        data-pulldown-target="entry"
+        data-value="<%= person.id %>"
+        data-action="click->pulldown#select click->form#submit">
         <%= person.initials %><%= ":" if person.initials.present? %>
         <%= person.name %>
       </div>

@@ -1,5 +1,5 @@
-<%= form_with(model: card) do |f| %>
-  <%= f.hidden_field(:size) %>
+<%= form_with(model: card, data: {controller: "form", "form-target": "form"}) do |f| %>
+  <%= f.hidden_field(:size, "data-pulldown-target": "field") %>
   <div class="droplist absolute w-48 -my-2 -mx-16
             bg-gray-400 z-10 shadow-xl">
     <% Card::SIZES.each do |size| %>
@@ -7,7 +7,10 @@
         class="py-2 px-4 hover:bg-gray-100
                 <%= "bg-yellow-200" if card.size == size %>"
         id="<%= card.slugged_id("size_#{size}") %>"
-        data-size-id="<%= size %>">
+        data-size-id="<%= size %>"
+        data-pulldown-target="entry"
+        data-value="<%= size %>"
+        data-action="click->pulldown#select click->form#submit">
         <%= size %>
       </div>
     <% end %>

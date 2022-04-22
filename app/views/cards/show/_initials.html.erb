@@ -1,5 +1,6 @@
 <div
-  id="<%= card.slugged_id(:initials) %>"
-  class="<%= dropdown_ring %>">
+  class="<%= dropdown_ring %>"
+  data-pulldown-target="display"
+  data-action="click->pulldown#open">
   <%= card.initials %>
 </div>

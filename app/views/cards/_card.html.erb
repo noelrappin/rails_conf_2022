@@ -5,8 +5,32 @@
     <div class="flex flex-vertical items-center font-bold">
       <%= render("cards/show/handle") %>
       <%= render("cards/show/slug", card:) %>
-      <%= render("cards/show/initials", card:) %>
-      <%= render("cards/show/size", card:) %>
+      <%= turbo_frame_tag(card.slugged_id("initials")) do %>
+        <div
+          data-controller="pulldown"
+          data-pulldown-status-value="closed"
+          data-pulldown-active-class="bg-yellow-200"
+          data-pulldown-selected-value="card.safe_person.id"
+          data-action="click@window->pulldown#closeOnOutsideClick">
+          <%= render("cards/show/initials", card:) %>
+          <div class="hidden" data-pulldown-target="list">
+            <%= render("cards/edit/initials", card:) %>
+          </div>
+        </div>
+      <% end %>
+      <%= turbo_frame_tag(card.slugged_id("size")) do %>
+        <div
+          data-controller="pulldown"
+          data-pulldown-status-value="closed"
+          data-pulldown-active-class="bg-yellow-200"
+          data-pulldown-selected-value="card.size"
+          data-action="click@window->pulldown#closeOnOutsideClick">
+          <%= render("cards/show/size", card:) %>
+          <div class="hidden" data-pulldown-target="list">
+            <%= render("cards/edit/size", card:) %>
+          </div>
+        </div>
+      <% end %>
       <%= render("cards/show/name", card:) %>
       <%= render("cards/show/actions", card:) %>
     </div>
