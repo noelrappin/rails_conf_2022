@@ -1,4 +1,7 @@
-<div id="cards_with_status_<%= status %>">
+<div
+  id="cards_with_status_<%= status %>"
+  data-controller="drag"
+  data-drag-url-value="/card_order_changes/:id">
   <% project.cards_for(status).each do |card| %>
     <%= render(card) %>
   <% end %>
