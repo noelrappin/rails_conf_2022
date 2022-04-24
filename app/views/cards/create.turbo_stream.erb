@@ -1,0 +1,5 @@
+<% if @card.present? %>
+  <%= turbo_stream.append("cards_with_status_#{@card.status}") do %>
+    <%= render(@card) %>
+  <% end %>
+<% end %>

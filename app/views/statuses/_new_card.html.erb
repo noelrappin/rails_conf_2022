@@ -1,7 +1,12 @@
 <div class="border border-black rounded-lg my-4 pl-2">
   <div class="flex">
     <div class="flex-grow ml-56 mr-36 mb-2">
-      <%= simple_form_for(Card.new) do |f| %>
+      <%= simple_form_for(
+            Card.new, html: {
+              "data-controller": "enter-submit",
+              "data-enter-submit-target": "form"
+            }
+          ) do |f| %>
         <%= hidden_field_tag("card[project_id]", project.id) %>
         <%= hidden_field_tag("card[status]", status.to_s) %>
         <div class="w-full mr-10 mt-2 -ml-2">
@@ -13,7 +18,8 @@
                 autofocus: false,
                 input_html: {
                   id: "card_name_#{status}",
-                  class: "sm:w-full font-bold text-lg sm:text-black"
+                  class: "sm:w-full font-bold text-lg sm:text-black",
+                  "data-enter-submit-target": "field"
                 }
               ) %>
         </div>

@@ -43,6 +43,15 @@ class Card < ApplicationRecord
     result
   end
 
+  def self.create_from_params(card_params)
+    return if card_params[:name].blank?
+    result = create(card_params.except(:person))
+    result.person = Person.find_by(id: card_params[:person])
+    result.slug = generate_slug if result.slug.blank?
+    result.save!
+    result
+  end
+
   def slugged_id(prefix = "")
     result = prefix.present? ? [prefix] : []
     result += ["card", slug]
