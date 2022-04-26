@@ -3,11 +3,11 @@ class CardsController < ApplicationController
 
   # GET /cards or /cards.json
   def index
-    if params[:query]
-      project = Project.find(params[:project_id])
+    project = Project.find(params[:project_id])
+    if params[:query].present?
       @cards = Search.new(project).search(params[:query])
     else
-      @cards = Card.all
+      redirect_to(project)
     end
   end
 
