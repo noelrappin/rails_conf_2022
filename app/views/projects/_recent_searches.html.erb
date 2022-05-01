@@ -1,0 +1,13 @@
+<div
+  id="recent_searches"
+  class="droplist absolute w-48 bg-gray-400 z-10 shadow-xl hidden"
+  data-visibility-target="element">
+  <% project.recent_searches.to_a.reverse.each do |search| %>
+    <div
+      class="py-2 px-4 hover:bg-gray-100"
+      data-copy-text="<%= search %>"
+      data-action="click->copy#copy click->visibility#hide">
+      <%= search %>
+    </div>
+  <% end %>
+</div>

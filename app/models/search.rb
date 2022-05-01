@@ -6,8 +6,11 @@ class Search
   end
 
   def search(query)
-    project.cards.where("description LIKE '%s'", "%#{query}%")
+    query = query.strip
+    result = project.cards.where("description LIKE '%s'", "%#{query}%")
       .or(project.cards.where("name LIKE '%s'", "%#{query}%"))
       .or(project.cards.where("slug LIKE '%s'", "%#{query}%"))
+    project.search_complete(query) if result.length > 0
+    result
   end
 end
