@@ -34,6 +34,10 @@ class Card < ApplicationRecord
   STATUSES = %w[archived attic unstarted started done]
   SIZES = %w[xs sm md lg xl]
 
+  after_create_commit -> do
+    broadcast_append_later_to(project, target: "cards_with_status_#{status}")
+  end
+
   def self.generate_slug
     result = nil
     loop do

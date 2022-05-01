@@ -29,7 +29,7 @@ class CardsController < ApplicationController
     @card = Card.create_from_params(card_params)
     respond_to do |format|
       format.html { redirect_to(@card.project) }
-      format.turbo_stream {}
+      format.turbo_stream { head(:ok) }
     end
   end
 

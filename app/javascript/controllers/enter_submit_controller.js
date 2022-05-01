@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import "form-request-submit-polyfill"
 
 export default class EnterSubmitController extends Controller {
   static targets = ["form", "field"]
