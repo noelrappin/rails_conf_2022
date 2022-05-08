@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    command: bash -c "bundle && bin/dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/myapp
+      - gem_cache:/gems:delegated
+    tty: true
+    stdin_open: true
+    links:
+      - redis
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - "redis:/data"
+volumes:
+  gem_cache: {}
+  redis:
