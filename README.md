@@ -16,7 +16,7 @@ In order to get set up, you should do the following
 2. In the directory for this repo, make sure you are running Rails 3.1 or up
 3. run `bundle install`
 4. Start your server by running `bin/dev`
-5. go to http://localhost:3000
+5. go to http://localhost:3000/
 6. You should see a webpage that looks like a project tracker
 
 ### Much less supported Docker setup
@@ -34,7 +34,7 @@ You should be able to edit the files normally.
 
 ## About the App
 
-The app is a very simple project tracker based on my [Elmer](https://noelrappin.com/tags/elmer/) project. It's data model is simplified and there's no user model or security. The app consists of _projects_ which are made up of _cards_. A card has a size (xl, lg, md, sm, xs) and a status (archived attic unstarted started done).
+The app is a very simple project tracker based on my [Elmer](https://noelrappin.com/tags/elmer/) project. Its data model is simplified and there's no user model or security. The app consists of _projects_ which are made up of _cards_. A card has a size (xl, lg, md, sm, xs) and a status (archived attic unstarted started done).
 
 ## How to use this repo
 
