@@ -44,7 +44,7 @@ The idea is that you can see small changes in isolation and choose to piece them
 
 To use this app, you should move between branches to browse code (you may want to use GitHub to browse other branches or even download the repo twice, once to browse and once to work on)/.
 
-I've tried to put a lot of base info in the `plain_old_ruby` branch to minimize change between branches, but there still may be things that require a restart of the server or the docker container as you change branches.
+I've tried to put a lot of base info in the `main` branch to minimize change between branches, but there still may be things that require a restart of the server or the docker container as you change branches.
 
 The `main` branch is pretty much just what you get from running `rails new . -a propshaft j importmap -d sqlite3 -c tailwind --skip-test`+ data models and view files and support gems. Running this branch gives you the basic, no JavaScript version of the app.
 
