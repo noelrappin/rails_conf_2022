@@ -8,12 +8,12 @@ This code base is for use during the [2022 RailsConf Rails 7 Front End Tools](ht
 
 In order to run this application, you need SQLite on your machine. The application comes with a pre-seeded SQLite database.
 
-For ease of installation, this application does not specify a Ruby version. It was developed with Ruby 3.1.2, but should run with any version of Ruby 3.0 and up. (Please note that Ruby 3.1 and up is the required and recommended version of Ruby to use with Rails 7.0.x).
+This application was was developed with Ruby 3.1.2, which is the recommended version of Ruby to use with Rails 7.0.x.
 
 In order to get set up, you should do the following
 
 1. Clone and download this repository
-2. In the directory for this repo, make sure you are running Rails 3.1 or up
+2. In the directory for this repo, make sure you are running Ruby 3.1.2 
 3. run `bundle install`
 4. Start your server by running `bin/dev`
 5. go to http://localhost:3000/
@@ -21,8 +21,8 @@ In order to get set up, you should do the following
 
 ### Much less supported Docker setup
 
-There is also a Docker setup. Please note that Noel will be much less
-likely to troubleshoot docker issues.
+There is also a Docker setup, which might be helpful if you don't have Ruby 3.1.2 installed. Please note that Noel will be much less
+likely to be able to troubleshoot Docker issues.
 
 To use Docker:
 
