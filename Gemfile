@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "~> 7.0.2", ">= 7.0.2.3"
-
 gem "acts_as_list"
 gem "awesome_print"
 gem "chartkick"
