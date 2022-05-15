@@ -13,7 +13,7 @@ This application was was developed with Ruby 3.1.2, which is the recommended ver
 In order to get set up, you should do the following
 
 1. Clone and download this repository
-2. In the directory for this repo, make sure you are running Ruby 3.1.2 
+2. In the directory for this repo, make sure you are running Ruby 3.1.2
 3. run `bundle install`
 4. Start your server by running `bin/dev`
 5. go to http://localhost:3000/
@@ -21,8 +21,7 @@ In order to get set up, you should do the following
 
 ### Much less supported Docker setup
 
-There is also a Docker setup, which might be helpful if you don't have Ruby 3.1.2 installed. Please note that Noel will be much less
-likely to be able to troubleshoot Docker issues.
+There is also a Docker setup, which might be helpful if you don't have Ruby 3.1.2 installed. Please note that Noel will be much less likely to be able to troubleshoot Docker issues.
 
 To use Docker:
 
@@ -42,11 +41,11 @@ This repo has several different branches, most of which add one piece of functio
 
 The idea is that you can see small changes in isolation and choose to piece them together in your own version of the app.
 
-To use this app, you should move between branches to browse code (you may want to use GitHub to browse other branches or even download the repo twice, once to browse and once to work on)/.
+To use this app, you should probably work off main and to use GitHub to browse other branches rather than jumping between branches or possibly download the repo twice, once to browse and once to work on.
 
-I've tried to put a lot of base info in the `main` branch to minimize change between branches, but there still may be things that require a restart of the server or the docker container as you change branches.
+I've tried to put a lot of base info in the `main` branch to minimize change between branches, but there still may be things that require a restart of the server or the docker container if you change branches.
 
-The `main` branch is pretty much just what you get from running `rails new . -a propshaft j importmap -d sqlite3 -c tailwind --skip-test`+ data models and view files and support gems. Running this branch gives you the basic, no JavaScript version of the app.
+The `main` branch is pretty much just what you get from running `rails new . -a propshaft j importmap -d sqlite3 -c tailwind --skip-test` plus data models and view files and support gems. Running this branch gives you a basic, no JavaScript version of the app, and most of the buttons on the main page are not functional.
 
 If you hit `http://localhost:3000`, `http://localhost:3000/projects`, or `http://localhost:3000/projects/1`, they should all look something like this:
 
