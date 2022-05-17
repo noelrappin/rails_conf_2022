@@ -15,6 +15,7 @@ In order to get set up, you should do the following
 1. Clone and download this repository
 2. In the directory for this repo, make sure you are running Ruby 3.1.2
 3. run `bundle install`
+4. You may need to run `rails tailwindcss:install`
 4. Start your server by running `bin/dev`
 5. go to http://localhost:3000/
 6. You should see a webpage that looks like a project tracker
