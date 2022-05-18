@@ -5,13 +5,11 @@
         <div class="<%= new_button_class %>"><%= previous_label(card.status) %></div>
       <% end %>
       <div>
-        <%= button_to(card, method: :delete) do %>
-          <%= image_tag(
-                "trash.svg",
-                size: "25x25",
-                class: "min-h-[25px] min-w-[25px]"
-              ) %>
-        <% end %>
+        <%= image_tag(
+              "trash.svg",
+              size: "25x25",
+              class: "min-h-[25px] min-w-[25px]"
+            ) %>
       </div>
     </div>
   </div>
